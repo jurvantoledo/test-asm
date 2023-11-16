@@ -42,3 +42,38 @@ AND MASK1, 128   ; Perform AND operation on the
 					  
 ADD MARKS, 10    ; Add 10 to the variable MARKS
 MOV AL, 10       ; Transfer the value 10 to the AL register
+
+-----------------------------------------------
+X86 ASSEMBLY LANGUAGE:
+-----------------------------------------------
+
+eax (accumulator register):
+  - Used to store the system call number before making a system call. 
+    After the system call, it often holds the return value.
+
+  EXAMPLE:
+    In the hello_world code 'mov eax, 4' sets 'eax' to 4 before the 'int 0x80' instruction indicating a `sys_write` 
+    system call later on. `mov eax, 1` sets `eax` to 1 for the `sys_exit` system call.
+
+ebx (base register):
+  - Often used to store arguments related to memory operations or file descriptors
+
+  EXAMPLE:
+    In the hello_world code `mov ebx, 1` sets `ebx` to 1 which represents the file descriptor for stdout
+
+ecx (counter register):
+  - Used as a counter in string operations or to store other miscellaneous values.
+  
+  EXAMPLE:
+    in the hello_world code `mov exc, msg` sets exc to the address of the message to be written
+
+edx (data register):
+  - Typically used to store the length of a data block in memory operations.
+  
+  EXAMPLE:
+    in the hello_world code `mov edx, len` sets `edx` to the length of the message.
+
+
+
+
+
